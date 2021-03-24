@@ -1,0 +1,68 @@
+.navigation-bar {
+  position: fixed;
+  border-radius: 5rem;
+  top: .5rem;
+  left: 2vw;
+  width: 96vw;
+  height: 3rem;
+
+  z-index: 2;
+
+  /* Glass effect */
+  background: linear-gradient(to right bottom, #cfcfcfdd, #cfcfcf99);
+
+  box-shadow: #00000020 0 .5rem 2rem 0;
+
+  @media screen and (min-width: 800px) {
+    width: 90vw;
+    height: 2rem;
+
+
+    left: 5vw;
+    top: 1rem;
+  }
+
+  &__left,
+  &__right {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &__left {
+    left: 0;
+  }
+
+  &__right {
+    right: 0;
+  }
+
+  &__left--logo,
+  &__right--cart,
+  &__right--sign-in,
+  &__right--sign-up {
+    font-size: .7rem;
+    height: 80%;
+    padding: 0 .4rem;
+  }
+
+  &__left--logo {
+    padding-left: 1rem;
+  }
+
+  &__right--sign-up {
+    margin-right: 1rem;
+    border-radius: 5rem;
+    background-color: #113ae9;
+    color: #ffffff;
+    min-width: 5rem;
+  }
+
+  &__right--sign-in {
+    font-size: .5rem;
+    color: #303030;
+  }
+
+}
