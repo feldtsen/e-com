@@ -1,0 +1,53 @@
+.card {
+  flex: 1;
+  cursor: pointer;
+  margin-left: 1rem;
+  margin-top: 1rem;
+
+  position: relative;
+
+  &:hover .hide {
+    visibility: visible;
+  }
+
+  &:hover .fade {
+    background-color: #00001900;
+    opacity: .5;
+
+  }
+
+  &--button {
+    position: absolute;
+    bottom: 1rem;
+    background-color: #cfcfcf;
+    padding: .5rem;
+    width: 80%;
+    left: 10%;
+  }
+
+  &__image-container {
+    overflow: hidden;
+    background-color: #000000;
+
+    &--image {
+      width: 100%;
+      align-self: start ;
+    }
+  }
+
+  &__description {
+    position: absolute;
+    color: white;
+    left: 10%;
+    top: 1rem;
+  }
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.fade {
+  opacity: 1;
+  transition: .3s;
+}

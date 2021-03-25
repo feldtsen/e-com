@@ -1,0 +1,15 @@
+.cards {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-content: center;
+
+  min-height: 12rem;
+  overflow: hidden;
+
+    @media screen and (min-width: 1250px) {
+      flex-direction: row;
+      height: 12rem;
+    }
+}

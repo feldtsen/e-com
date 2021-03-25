@@ -6,7 +6,8 @@ const CircleGeometry = ({ circleStyle }) => (
        height: `${circleStyle.size}rem`,
        top: `${circleStyle.top - (circleStyle.size/2)}rem`,
        right: `${circleStyle.right - (circleStyle.size/2)}rem`,
-       backgroundColor: `${circleStyle.color}`
+       backgroundColor: `${circleStyle.color}`,
+       zIndex: `${circleStyle.index}`
    }}/>
 )
 

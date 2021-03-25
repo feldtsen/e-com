@@ -1,0 +1,28 @@
+.collection {
+  min-height: 100vh;
+
+  &__all-categories {
+    display: flex;
+    color: white;
+    margin-top: 5rem;
+    position: relative;
+    z-index: 3;
+    width: 90vw;
+    left: 5vw;
+
+    &--category {
+      margin-right: 1rem;
+    }
+  }
+
+  &__container {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 90vw;
+    left: 5vw;
+
+  }
+
+}
