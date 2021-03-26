@@ -1,17 +1,25 @@
 .collection {
-  min-height: 100vh;
+  min-height: calc(100vh - 5rem);
+  margin-top: 5rem;
+
+  &--title {
+    color: white;
+    margin-left: 5vw;
+    margin-bottom: 1vw;
+    position: relative;
+    z-index: 3;
+  }
 
   &__all-categories {
     display: flex;
     color: white;
-    margin-top: 5rem;
-    position: relative;
-    z-index: 3;
     width: 90vw;
-    left: 5vw;
+    margin-left: 5vw;
+    z-index: 3;
+    position: relative;
 
     &--category {
-      margin-right: 1rem;
+      margin-right: .5rem;
     }
   }
 

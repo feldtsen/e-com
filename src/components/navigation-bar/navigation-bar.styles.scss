@@ -6,6 +6,10 @@
   width: 96vw;
   height: 3rem;
 
+  display: flex;
+  justify-content: space-between;
+
+
   z-index: 10;
 
   /* Glass effect */
@@ -24,19 +28,10 @@
 
   &__left,
   &__right {
-    position: absolute;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     height: 100%;
-  }
-
-  &__left {
-    left: 0;
-  }
-
-  &__right {
-    right: 0;
   }
 
   &__left--logo,
@@ -46,6 +41,11 @@
     font-size: .7rem;
     height: 80%;
     padding: 0 .4rem;
+    text-align: center;
+
+    & > a {
+      color: black;
+    }
   }
 
   &__left--logo {
@@ -58,11 +58,18 @@
     background-color: #113ae9;
     color: #ffffff;
     min-width: 5rem;
+
+    & > a {
+      color: white;
+    }
   }
 
   &__right--sign-in {
     font-size: .5rem;
     color: #303030;
+    & > a {
+      color: #303030;
+    }
   }
 
 }

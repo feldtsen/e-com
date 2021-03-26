@@ -17,10 +17,13 @@ const Collection = () => {
 
     return (
         <div className="collection">
+            <h1 className="collection--title">
+                Collection
+            </h1>
             <div className="collection__all-categories">
                 {
-                    data.map(({title})=>(
-                        <div className="collection__all-categories--category">{title}</div>
+                    data.map(({title, index})=>(
+                        <div key={`${title}${index}`} className="collection__all-categories--category">{title}</div>
                     ))
                 }
             </div>
