@@ -4,20 +4,34 @@ import '../sign-up-or-sign-in.styles.scss';
 import FormInput from "../../../components/form-input/form-input.component";
 import CustomButton from "../../../components/custom-button/custom-button.component";
 
+import {auth, signInWithGoogle} from "../../../firebase/firebase.utils";
+
 const SignIn = ({back}) => {
     let [credentials, setCredentials] = useState({
         email: '',
         password: ''
     });
 
-    const handleSubmit = event => {
+    const handleSubmit = async event => {
         event.preventDefault();
 
+        const {email, password} = credentials;
+
+        try {
+            await auth.signInWithEmailAndPassword(email, password);
+
+            setCredentials({
+                ...credentials,
+                password: ''
+            });
+
+        } catch (error) {
+            console.error(error)
+        }
+
+
+
         // If wrong credentials are passed to the input field, clear the password field
-        setCredentials({
-            ...credentials,
-            password: ''
-        });
     }
 
     const handleChange = event => {
@@ -35,9 +49,9 @@ const SignIn = ({back}) => {
     onClick={e => e.stopPropagation()}>
         <button className="sign-in--close" onClick={back}>X</button>
 
-        <h2 className='sign-up--title'>Sign in</h2>
+        <h2 className='sign-in--title'>Sign in</h2>
 
-        <CustomButton additionalClasses={`custom-button--google`}>sign in with Google</CustomButton>
+        <CustomButton additionalClasses={`custom-button--google`} onClick={signInWithGoogle}>sign in with Google</CustomButton>
 
         <h3 className='sign-up--subtitle'>or</h3>
 

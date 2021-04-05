@@ -1,7 +1,7 @@
 @mixin shrinkLabel {
   color: black;
   font-size: .5rem;
-  transform: translate(0, -1.7rem);
+  transform: translate(0, -.5rem);
 }
 
 .form-input {
@@ -27,7 +27,7 @@
     position: absolute;
     left: 1rem;
     font-size: .8rem;
-    transform: translate(0, -1rem);
+    transform: translate(0, .3rem);
 
     pointer-events: none;
 

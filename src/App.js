@@ -1,4 +1,4 @@
-import React from 'react';
+import {useState, useEffect} from 'react';
 import './App.css';
 
 import {
@@ -18,6 +18,8 @@ import NavigationBar from "./components/navigation-bar/navigation-bar.component"
 import GeometryContainer from "./components/geometry/geometry-container.component";
 import CircleGeometry from "./components/geometry/circle-geometry.component";
 
+import {auth, createUserProfileDocument} from "./firebase/firebase.utils";
+
 
 const circleStyles = [
     {size: 30, top: 2, right: 2, color: "#820829", index: 1},
@@ -36,9 +38,35 @@ function App() {
         history.goBack();
     }
 
+    let [user, setUser] = useState(null);
+
+
+    useEffect(() => {
+       const unsubscribe = auth.onAuthStateChanged(
+           async userAuth => {
+               if(userAuth) {
+                    const userRef = await createUserProfileDocument(userAuth);
+
+                    userRef.onSnapshot(snapshot => {
+                       setUser({
+                         id: snapshot.id,
+                         ...snapshot.data()
+                       });
+                    })
+               } else {
+                   setUser(userAuth);
+               }
+           }
+       )
+
+        return () => {
+           unsubscribe();
+        }
+    }, [])
+
   return (
     <>
-        <NavigationBar />
+        <NavigationBar user={user}/>
         <GeometryContainer>
             {
                 circleStyles.map( (circleStyle, index) => (
@@ -53,7 +81,7 @@ function App() {
         </Switch>
 
         {background && <Route path="/sign-in" children={<Modal back={back}><SignIn back={back}/></Modal>} />}
-        {background && <Route path="/sign-up" children={<Modal><SignUp/></Modal>} />}
+        {background && <Route path="/sign-up" children={<Modal back={back}><SignUp back={back}/></Modal>} />}
     </>
   );
 }

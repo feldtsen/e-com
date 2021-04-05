@@ -37,7 +37,8 @@
   &__left--logo,
   &__right--cart,
   &__right--sign-in,
-  &__right--sign-up {
+  &__right--sign-up
+  {
     font-size: .7rem;
     height: 80%;
     padding: 0 .4rem;
@@ -52,7 +53,7 @@
     padding-left: 1rem;
   }
 
-  &__right--sign-up {
+  &__right--sign-up{
     margin-right: 1rem;
     border-radius: 5rem;
     background-color: #113ae9;
@@ -72,4 +73,7 @@
     }
   }
 
+  &__right--sign-out {
+    margin-right: 1rem;
+  }
 }
