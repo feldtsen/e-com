@@ -1,12 +1,14 @@
 import './navigation-bar.styles.scss'
 import { signOut } from "../../firebase/firebase.utils";
 
+import { connect } from "react-redux";
+
 import {
     Link,
     useLocation
 } from 'react-router-dom';
 
-const NavigationBar = ({user}) => {
+const NavigationBar = ({currentUser}) => {
     let location = useLocation();
 
     return (
@@ -21,7 +23,7 @@ const NavigationBar = ({user}) => {
 
             <div className="navigation-bar__right">
                 {
-                    user ?
+                    currentUser ?
                         <>
                             <button className="navigation-bar__right--cart"><Link to="/collection">shop</Link></button>
                             <button className="navigation-bar__right--sign-out" onClick={signOut}>
@@ -53,5 +55,8 @@ const NavigationBar = ({user}) => {
         </nav>
     )
 }
+const mapStateToProps = state => ({
+    currentUser: state.user.currentUser
+})
 
-export default NavigationBar;
+export default connect(mapStateToProps)(NavigationBar);

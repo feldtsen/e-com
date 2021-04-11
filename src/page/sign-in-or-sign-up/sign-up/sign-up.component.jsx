@@ -4,7 +4,7 @@ import '../sign-up-or-sign-in.styles.scss';
 import FormInput from "../../../components/form-input/form-input.component";
 import CustomButton from "../../../components/custom-button/custom-button.component";
 
-import {auth, createUserProfileDocument} from "../../../firebase/firebase.utils";
+import {auth, createUserProfileDocument, signInWithGoogle} from "../../../firebase/firebase.utils";
 
 
 const SignUp = ({back}) => {
@@ -69,6 +69,11 @@ const SignUp = ({back}) => {
             <button className="sign-up--close" onClick={back}>X</button>
 
             <h2 className='sign-up--title'>Sign up</h2>
+
+            <CustomButton additionalClasses={`custom-button--google`} onClick={signInWithGoogle}>sign up with Google</CustomButton>
+
+            <h3 className='sign-in--subtitle'>or</h3>
+
             <form onSubmit={handleSubmit}>
                 <FormInput
                     label='Display name'

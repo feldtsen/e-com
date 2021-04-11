@@ -1,11 +1,14 @@
-import {useState, useEffect} from 'react';
+import { useEffect } from 'react';
 import './App.css';
+
+import { connect } from "react-redux";
 
 import {
     Switch,
     Route,
     useLocation,
-    useHistory
+    useHistory,
+    Redirect
 } from 'react-router-dom';
 
 import LandingPage from "./page/landing-page/landing-page.component";
@@ -19,6 +22,7 @@ import GeometryContainer from "./components/geometry/geometry-container.componen
 import CircleGeometry from "./components/geometry/circle-geometry.component";
 
 import {auth, createUserProfileDocument} from "./firebase/firebase.utils";
+import {setCurrentUser} from "./redux/user/user.actions";
 
 
 const circleStyles = [
@@ -27,7 +31,7 @@ const circleStyles = [
     {size: 20, top: 0, right: 2, color: "#d0114d", index: 3},
 ];
 
-function App() {
+const App = ({setCurrentUser, currentUser}) => {
     let location = useLocation();
     let background = location.state && location.state.background;
 
@@ -38,9 +42,6 @@ function App() {
         history.goBack();
     }
 
-    let [user, setUser] = useState(null);
-
-
     useEffect(() => {
        const unsubscribe = auth.onAuthStateChanged(
            async userAuth => {
@@ -48,13 +49,13 @@ function App() {
                     const userRef = await createUserProfileDocument(userAuth);
 
                     userRef.onSnapshot(snapshot => {
-                       setUser({
+                       setCurrentUser({
                          id: snapshot.id,
                          ...snapshot.data()
                        });
                     })
                } else {
-                   setUser(userAuth);
+                   setCurrentUser(userAuth);
                }
            }
        )
@@ -66,7 +67,7 @@ function App() {
 
   return (
     <>
-        <NavigationBar user={user}/>
+        <NavigationBar />
         <GeometryContainer>
             {
                 circleStyles.map( (circleStyle, index) => (
@@ -80,10 +81,31 @@ function App() {
             <Route exact path='/collection' component={Collection}/>
         </Switch>
 
-        {background && <Route path="/sign-in" children={<Modal back={back}><SignIn back={back}/></Modal>} />}
-        {background && <Route path="/sign-up" children={<Modal back={back}><SignUp back={back}/></Modal>} />}
+        {currentUser ?
+            <Redirect to={back} />
+            :
+            background &&
+            <Route exact path={location.pathname === "/sign-in" ? "/sign-in" : "/sign-up"} children={
+                <Modal back={back}>
+                    {
+                        location.pathname === "/sign-in" ?
+                            <SignIn back={back}/>
+                            :
+                            <SignUp back={back} />
+                    }
+                 </Modal>
+        } />}
+
     </>
   );
 }
 
-export default App;
+const mapStateToProps = ({user}) => ({
+    currentUser: user.currentUser
+});
+
+const mapDispatchToProps = dispatch => ({
+    setCurrentUser: user => dispatch(setCurrentUser(user))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
