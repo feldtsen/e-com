@@ -14,7 +14,6 @@
 
   /* Glass effect */
   background: linear-gradient(to right bottom, #cfcfcfdd, #cfcfcf99);
-
   box-shadow: #00000020 0 .5rem 2rem 0;
 
   @media screen and (min-width: 800px) {
@@ -71,9 +70,11 @@
     & > a {
       color: #303030;
     }
+
   }
 
   &__right--sign-out {
     margin-right: 1rem;
   }
+
 }

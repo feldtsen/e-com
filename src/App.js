@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import './App.css';
 
 import { connect } from "react-redux";
@@ -65,6 +65,7 @@ const App = ({setCurrentUser, currentUser}) => {
         }
     }, [])
 
+
   return (
     <>
         <NavigationBar />
@@ -82,7 +83,7 @@ const App = ({setCurrentUser, currentUser}) => {
         </Switch>
 
         {currentUser ?
-            <Redirect to={back} />
+            <Redirect to="/collection" />
             :
             background &&
             <Route exact path={location.pathname === "/sign-in" ? "/sign-in" : "/sign-up"} children={

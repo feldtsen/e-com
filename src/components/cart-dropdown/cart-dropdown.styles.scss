@@ -1,0 +1,18 @@
+.cart-dropdown {
+  top: 2.2rem;
+  right: 0;
+  max-height: 8rem;
+  position: absolute;
+  width: 15rem;
+  padding: .5rem;
+
+  display: flex;
+  flex-direction: column;
+
+  background: linear-gradient(to right bottom, #cfcfcfdd, #cfcfcf99);
+  box-shadow: #00000020 0 .5rem 2rem 0;
+
+  &__cart-items {
+
+  }
+}
