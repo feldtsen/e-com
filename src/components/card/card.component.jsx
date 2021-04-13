@@ -1,19 +1,30 @@
 import './card.styles.scss'
+import CustomButton from "../custom-button/custom-button.component";
+import {addItem} from "../../redux/cart/cart.action";
+import { connect } from "react-redux";
 
-const Card = ({imageUrl, price, name, rowCount}) => (
-    <div className="card"
-    style={{
-        flexBasis: `${(100 - (rowCount-1))/rowCount}%`
-    }}>
-        <div className="card__image-container ">
-            <img alt='' src={imageUrl} className="card__image-container--image fade"/>
-        </div>
-        <button className="card--button hide">add to cart</button>
-        <div className="card__description hide">
-            <p>{name}</p>
-            <p>{`${price}$`}</p>
-        </div>
-    </div>
-)
+const Card = ({rowCount, item, addItem}) => {
+    const {imageUrl, price, name} = item;
 
-export default Card;
+    return (
+        <div className="card"
+        style={{
+            flexBasis: `${(100 - (rowCount-1))/rowCount}%`
+        }}>
+            <div className="card__image-container ">
+                <img alt='' src={imageUrl} className="card__image-container--image fade"/>
+            </div>
+            <CustomButton onClick={()=>addItem(item)} additionalClasses="hide custom-button--card">add to cart</CustomButton>
+            <div className="card__description hide">
+                <p>{name}</p>
+                <p>{`${price}$`}</p>
+            </div>
+        </div>
+    )
+}
+
+const mapDispatchToProps = dispatch => ({
+    addItem: item => dispatch(addItem(item))
+})
+
+export default connect(null, mapDispatchToProps)(Card);

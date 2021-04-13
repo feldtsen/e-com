@@ -1,12 +1,27 @@
 .custom-button {
   font-size: 1rem;
   width: 100%;
-  color: white;
-  padding: .5rem!important;
+  padding: .5rem;
   margin-top: 1rem;
-  background: #040222!important;
+  background: #040222;
+  color: #fafafa;
 
   &--google {
-    background: #113ae9!important;
+    background: #113ae9
+  }
+
+  &--card {
+    color: #040222;
+    background: #fafafa;
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    bottom: 5%;
+    transition: .1s;
+
+    &:hover {
+      background: #040222;
+      color: #fafafa;
+    }
   }
 }

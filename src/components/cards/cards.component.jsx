@@ -27,8 +27,8 @@ const Cards = ({ items, nrToRenderDesktop, nrToRenderMobile }) => {
                         .filter((item, index) => (
                             index < rowCount
                         ))
-                        .map(({id, ...otherProps}) => (
-                            <Card key={id} {...otherProps} rowCount={rowCount}/>
+                        .map((item) => (
+                            <Card key={item.id} item={item} rowCount={rowCount}/>
                         ))
                     :
                     ''
