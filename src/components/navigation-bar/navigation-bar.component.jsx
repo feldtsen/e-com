@@ -1,14 +1,15 @@
 import './navigation-bar.styles.scss'
+
 import { signOut } from "../../firebase/firebase.utils";
-
 import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 
-import {
-    Link,
-    useLocation
-} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
+
+import {selectCurrentUser} from "../../redux/user/user.selectors";
+import {selectCartHidden} from "../../redux/cart/cart.selectors";
 
 const NavigationBar = ({currentUser, hidden}) => {
     let location = useLocation();
@@ -64,9 +65,9 @@ const NavigationBar = ({currentUser, hidden}) => {
         </nav>
     )
 }
-const mapStateToProps = ({user: {currentUser}, cart: { hidden }}) => ({
-    currentUser,
-    hidden
+const mapStateToProps =  createStructuredSelector({
+    currentUser: selectCurrentUser,
+    hidden: selectCartHidden
 })
 
 export default connect(mapStateToProps)(NavigationBar);

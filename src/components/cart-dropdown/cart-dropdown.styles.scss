@@ -9,6 +9,11 @@
   box-shadow: #00000020 0 .5rem 2rem 0;
 
 
+  &--empty-message {
+    font-size: .8rem;
+    color: #8f8f8f;
+  }
+
   &__cart-items {
     max-height: 70vh;
     overflow-y: scroll;

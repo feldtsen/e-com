@@ -32,6 +32,7 @@ footer, header, hgroup, menu, nav, section {
 html {
     font-size: calc(18px + 1vw);
     font-family: 'Poppins', sans-serif;;
+    min-height: 100%;
 }
 
 body {

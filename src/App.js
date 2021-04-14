@@ -1,28 +1,27 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import './App.css';
 
 import { connect } from "react-redux";
 
-import {
-    Switch,
-    Route,
-    useLocation,
-    useHistory,
-    Redirect
-} from 'react-router-dom';
+import {Switch, Route, useLocation, useHistory, Redirect} from 'react-router-dom';
+
+import {createStructuredSelector} from "reselect";
+import {selectCurrentUser} from "./redux/user/user.selectors";
 
 import LandingPage from "./page/landing-page/landing-page.component";
 import Collection from "./page/collection/collection.component";
 import SignIn from "./page/sign-in-or-sign-up/sign-in/sign-in.component";
 import SignUp from "./page/sign-in-or-sign-up/sign-up/sign-up.component";
 import Modal from "./components/modal/modal.component.";
-
 import NavigationBar from "./components/navigation-bar/navigation-bar.component";
+import CheckoutPage from "./page/checkout/checkout.component";
 import GeometryContainer from "./components/geometry/geometry-container.component";
 import CircleGeometry from "./components/geometry/circle-geometry.component";
 
 import {auth, createUserProfileDocument} from "./firebase/firebase.utils";
 import {setCurrentUser} from "./redux/user/user.actions";
+
+
 
 
 const circleStyles = [
@@ -78,8 +77,9 @@ const App = ({setCurrentUser, currentUser}) => {
         </GeometryContainer>
 
         <Switch location={background || location}>
-            <Route exact path='/' component={LandingPage}/>
-            <Route exact path='/collection' component={Collection}/>
+            <Route exact path="/" component={LandingPage}/>
+            <Route exact path="/collection" component={Collection}/>
+            <Route exact path="/checkout" component={CheckoutPage} />
         </Switch>
 
         {currentUser ?
@@ -101,8 +101,8 @@ const App = ({setCurrentUser, currentUser}) => {
   );
 }
 
-const mapStateToProps = ({user}) => ({
-    currentUser: user.currentUser
+const mapStateToProps = createStructuredSelector({
+    currentUser: selectCurrentUser
 });
 
 const mapDispatchToProps = dispatch => ({

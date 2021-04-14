@@ -1,0 +1,12 @@
+.checkout-item {
+  & img {
+    max-width: 5rem;
+  }
+  margin: .2rem 0;
+  display: flex;
+  color: white;
+  flex: 1 1 auto;
+  & div {
+    flex: 1;
+  }
+}
