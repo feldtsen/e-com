@@ -62,7 +62,7 @@ const App = ({setCurrentUser, currentUser}) => {
         return () => {
            unsubscribe();
         }
-    }, [])
+    }, [setCurrentUser])
 
 
   return (

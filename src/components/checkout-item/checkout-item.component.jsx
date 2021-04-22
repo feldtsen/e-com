@@ -8,7 +8,7 @@ export const CheckoutItem = ({cartItem, clearItem, removeItem, addItem}) => {
 
     return (
         <div className="checkout-item">
-            <img src={imageUrl} />
+            <img alt="checkout item" src={imageUrl} />
             <div>{name}</div>
             <div>
                 <span onClick={()=>removeItem(cartItem)}>&#10094;</span>

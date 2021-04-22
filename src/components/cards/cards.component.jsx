@@ -16,7 +16,7 @@ const Cards = ({ items, nrToRenderDesktop, nrToRenderMobile }) => {
         return () => {
             window.removeEventListener('resize', resizeHandler);
         }
-    }, [])
+    }, [nrToRenderDesktop, nrToRenderMobile])
 
 
     return (
