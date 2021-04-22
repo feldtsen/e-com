@@ -1,6 +1,8 @@
 # e-com
 Work in progress.
 
+View current progress: https://fmerch.netlify.app/shop
+
 The goal is to learn more about 
   * Hooks
   * Context API
