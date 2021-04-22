@@ -16,7 +16,7 @@ export const CheckoutItem = ({cartItem, clearItem, removeItem, addItem}) => {
                 <span className="checkout-item--arrow" onClick={()=> addItem(cartItem)}>&#10095;</span>
             </div>
             <div>${price}</div>
-            <div onClick={()=>clearItem(cartItem)}>&#10005;</div>
+            <div className="checkout-item--arrow" onClick={()=>clearItem(cartItem)}>&#10005;</div>
         </div>
     )
 }
