@@ -26,9 +26,9 @@ import {setCurrentUser} from "./redux/user/user.actions";
 
 
 const circleStyles = [
-    {size: 30, top: 2, right: 2, color: "#820829", index: 1},
-    {size: 25, top: 1, right: 10, color: "#9e0131", index: 2},
-    {size: 20, top: 0, right: 2, color: "#d0114d", index: 3},
+    {size: 20, top: 2, right: 2, color: "#820829", index: 1},
+    {size: 20, top: .5, right: 8, color: "#9e0131", index: 2},
+    {size: 15, top: 0, right: 2, color: "#d0114d", index: 3},
 ];
 
 const App = ({setCurrentUser, currentUser}) => {
