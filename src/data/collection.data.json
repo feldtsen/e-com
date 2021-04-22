@@ -1,5 +1,5 @@
-[
-  {
+{
+  "hats": {
     "id": 1,
     "title": "Hats",
     "routeName": "hats",
@@ -60,7 +60,7 @@
       }
     ]
   },
-  {
+  "sneakers": {
     "id": 2,
     "title": "Sneakers",
     "routeName": "sneakers",
@@ -115,7 +115,7 @@
       }
     ]
   },
-  {
+  "jackets": {
     "id": 3,
     "title": "Jackets",
     "routeName": "jackets",
@@ -152,4 +152,4 @@
       }
     ]
   }
-]
+}

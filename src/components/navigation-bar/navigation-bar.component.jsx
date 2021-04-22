@@ -25,7 +25,7 @@ const NavigationBar = ({currentUser, hidden}) => {
             </div>
 
             <div className="navigation-bar__right">
-                <button className="navigation-bar__right--cart"><Link to="/collection">shop</Link></button>
+                <button className="navigation-bar__right--cart"><Link to="/shop">shop</Link></button>
                 <button className="navigation-bar__right--cart"><CartIcon /></button>
                 {
                     hidden ?

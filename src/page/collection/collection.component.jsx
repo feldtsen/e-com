@@ -1,37 +1,30 @@
-import {useState, useEffect} from 'react';
-import CollectionPreview from "../../components/collection-preview/collection-preview.compononent";
 import './collection.styles.scss';
 
-const Collection = () => {
-    const [data, setData] = useState([{title: 'none'}]);
+import Card from "../../components/card/card.component";
+import {connect} from 'react-redux';
+import {selectShopCollection} from "../../redux/shop/shop.selector";
+import {Link} from "react-router-dom";
 
-
-   const getCollection = () => {
-       const jsonData = require('../../data/collection.data.json');
-       setData(jsonData);
-   }
-
-   useEffect(()=>{
-       getCollection();
-   }, [])
-
+const CollectionPage = ({match, collection}) =>  {
+    const {title, items} = collection;
     return (
         <div className="collection">
-            <h1 className="collection--title">
-                Collection
-            </h1>
-            <div className="collection__all-categories">
+            <Link to='/shop'>{`< go back to categories`}</Link>
+            <h2 className="collection-title">{title}</h2>
+            <div className="collection__container">
                 {
-                    data.map(({title, index})=>(
-                        <div key={`${title}${index}`} className="collection__all-categories--category">{title}</div>
+                    items.map(item => (
+                        <Card key={item.id} item={item}/>
                     ))
                 }
             </div>
-            <div className="collection__container">
-                <CollectionPreview data={data} />
-            </div>
+
         </div>
     )
 }
 
-export default Collection;
+const mapStateToProps = (state, ownProps) => ({
+    collection: selectShopCollection(ownProps.match.params.collectionId)(state)
+});
+
+export default connect(mapStateToProps)(CollectionPage);

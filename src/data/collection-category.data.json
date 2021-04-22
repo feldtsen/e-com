@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "Hats",
+    "routeName": "hats"
+  },
+  {
+    "id": 2,
+    "title": "Sneakers",
+    "routeName": "sneakers"
+  },
+  {
+    "id": 3,
+    "title": "Jackets",
+    "routeName": "jackets"
+  }
+]

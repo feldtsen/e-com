@@ -9,7 +9,7 @@ import {createStructuredSelector} from "reselect";
 import {selectCurrentUser} from "./redux/user/user.selectors";
 
 import LandingPage from "./page/landing-page/landing-page.component";
-import Collection from "./page/collection/collection.component";
+import ShopPage from "./page/shop/shop.component";
 import SignIn from "./page/sign-in-or-sign-up/sign-in/sign-in.component";
 import SignUp from "./page/sign-in-or-sign-up/sign-up/sign-up.component";
 import Modal from "./components/modal/modal.component.";
@@ -78,15 +78,15 @@ const App = ({setCurrentUser, currentUser}) => {
 
         <Switch location={background || location}>
             <Route exact path="/" component={LandingPage}/>
-            <Route exact path="/collection" component={Collection}/>
             <Route exact path="/checkout" component={CheckoutPage} />
+            <Route path="/shop" component={ShopPage}/>
         </Switch>
 
         {currentUser ?
-            <Redirect to="/collection" />
+            <Redirect to="/shop" />
             :
             background &&
-            <Route exact path={location.pathname === "/sign-in" ? "/sign-in" : "/sign-up"} children={
+            <Route path={location.pathname === "/sign-in" ? "/sign-in" : "/sign-up"} children={
                 <Modal back={back}>
                     {
                         location.pathname === "/sign-in" ?

@@ -7,7 +7,7 @@ const LandingPageHeading = ({ title, cta }) => (
            <h1 className="landing-page__container--title">
                {title}
            </h1>
-           <CallToAction cta={cta} linkUrl='collection'/>
+           <CallToAction cta={cta} linkUrl='shop'/>
        </div>
     </div>
 )

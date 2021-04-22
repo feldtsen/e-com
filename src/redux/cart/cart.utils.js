@@ -13,12 +13,9 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
 }
 
 export const clearItemFromCart = (cartItems, cartItemToRemove) => {
-  console.log("Tried to clear item from cart.");
-
   return cartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id)
 }
 export const removeItemFromCart = (cartItems, cartItemToRemove) => {
-    console.log("Tried to clear item from cart.");
     const cartItemAlreadyExist = cartItems.find(cartItem => cartItem.id === cartItemToRemove.id);
 
     if (cartItemAlreadyExist.quantity === 1) {
