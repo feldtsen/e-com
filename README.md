@@ -1,7 +1,7 @@
 # e-com
 Work in progress.
 
-View current progress: https://fmerch.netlify.app/shop
+View current progress: https://fmerch.netlify.app/
 
 The goal is to learn more about 
   * Hooks
