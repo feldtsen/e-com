@@ -3,10 +3,17 @@
     max-width: 5rem;
   }
   margin: .2rem 0;
-  display: flex;
-  color: white;
-  flex: 1 1 auto;
-  & div {
-    flex: 1;
+  display: grid;
+  grid-template-columns: 40% 30% 15% 15% 5%;
+
+  @media screen and (min-width: 600px) {
+    grid-template-columns: 25% 45% 15% 15% 5%;
   }
+
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: 15% 35% 15% 15% 5%;
+  }
+
+  color: white;
+
 }
