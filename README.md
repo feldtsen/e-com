@@ -1,7 +1,7 @@
 # e-com
 Work in progress.
 
-The goal of this application is to learn more about 
+The goal is to learn more about 
   * Hooks
   * Context API
   * React Lazy
