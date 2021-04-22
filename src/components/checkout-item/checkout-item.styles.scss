@@ -1,3 +1,5 @@
+@import "../../styles-variables/variables";
+
 .checkout-item {
   & img {
     max-width: 5rem;
@@ -14,6 +16,20 @@
     grid-template-columns: 15% 35% 15% 15% 5%;
   }
 
-  color: white;
+  color: $common-text-color;
+
+  &--quantity {
+  }
+
+  &--arrow {
+    padding: 0 .5rem;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 
 }

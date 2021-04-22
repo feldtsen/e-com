@@ -1,5 +1,7 @@
-.cart-icon {
-  &--counter {
+@import "../../styles-variables/variables";
 
+.cart-icon {
+  color: $common-text-color;
+  &--counter {
   }
 }

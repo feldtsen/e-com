@@ -1,31 +1,14 @@
 .shop {
-  min-height: calc(100vh - 5rem);
   margin-top: 5rem;
   &--title {
     color: white;
     margin-left: 5vw;
-    margin-bottom: 1vw;
-    position: relative;
     z-index: 3;
   }
 
-  &__all-categories {
-    display: flex;
-    color: white;
-    width: 90vw;
-    margin-left: 5vw;
-    z-index: 3;
-    position: relative;
-
-    &--category {
-      margin-right: .5rem;
-    }
-  }
 
   &__container {
     z-index: 2;
-    display: flex;
-    flex-direction: column;
     position: relative;
     width: 90vw;
     left: 5vw;

@@ -5,12 +5,11 @@ import {connect} from 'react-redux';
 import {selectShopCollection} from "../../redux/shop/shop.selector";
 import {Link} from "react-router-dom";
 
-const CollectionPage = ({match, collection}) =>  {
-    const {title, items} = collection;
+const CollectionPage = ({collection}) =>  {
+    const {items} = collection;
     return (
         <div className="collection">
-            <Link to='/shop'>{`< go back to categories`}</Link>
-            <h2 className="collection-title">{title}</h2>
+            <Link to='/shop'><div className="collection__go-back">{`< go back to categories`}</div></Link>
             <div className="collection__container">
                 {
                     items.map(item => (

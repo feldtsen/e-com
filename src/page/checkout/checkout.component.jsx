@@ -27,7 +27,7 @@ const CheckoutPage = ({ cartItems, total }) => (
             ))
         }
         </div>
-        <div className="checkout-page__total">The total price: {total}</div>
+        <div className="checkout-page__total">The total price: ${total}</div>
         <div className="checkout-page__test-warning">
             <h1>* Please use the following test credit card for payment</h1>
             <br/>

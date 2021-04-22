@@ -1,3 +1,5 @@
+@import "../../styles-variables/variables";
+
 .checkout-page {
   min-height: 100%;
   width: 80%;
@@ -18,7 +20,7 @@
   }
 
   &__total {
-    color: white;
+    color: $common-text-color;
   }
 
   &__test-warning {

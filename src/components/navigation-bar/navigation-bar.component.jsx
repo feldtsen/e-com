@@ -11,11 +11,10 @@ import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import {selectCurrentUser} from "../../redux/user/user.selectors";
 import {selectCartHidden} from "../../redux/cart/cart.selectors";
 
-const NavigationBar = ({currentUser, hidden}) => {
+const NavigationBar = ({currentUser, hidden, scrollY}) => {
     let location = useLocation();
-
     return (
-        <nav className="navigation-bar">
+        <nav className={`navigation-bar ${scrollY >= 100 ? 'navigation-bar--visible' : ''}`}>
             <div className="navigation-bar__left">
                 <button className="navigation-bar__left--logo">
                     <Link to="/">

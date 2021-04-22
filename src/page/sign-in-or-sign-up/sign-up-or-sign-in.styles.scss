@@ -1,3 +1,5 @@
+@import "../../styles-variables/variables";
+
 .sign-in,
 .sign-up {
 
@@ -5,15 +7,14 @@
   display: flex;
   flex-direction: column;
 
-  top: 4rem;
+  top: 2rem;
   left: 5vw;
   width: 90vw;
 
   padding: 1rem;
 
-  background-color: #fafafa;
+  background-color: white;
 
-  box-shadow: #909090aa 0px 10px 36px 0px, #9090900c 0px 0px 0px 1px;
 
 
   @media screen and (min-width: 800px) {

@@ -1,21 +1,23 @@
+@import '../../styles-variables/variables';
+
 .cart-dropdown {
-  top: 2.2rem;
+  top: 3.2rem;
   right: 0;
   position: absolute;
   width: 15rem;
   padding: .5rem;
+  margin: 1rem;
 
-  background: #cfcfcf;
-  box-shadow: #00000020 0 .5rem 2rem 0;
+  background: $base-color-pop;
 
 
   &--empty-message {
-    font-size: .8rem;
-    color: #8f8f8f;
+    color: $common-text-color;
   }
 
   &__cart-items {
-    max-height: 70vh;
+    height: 50vh;
+    max-height: 50vh;
     overflow-y: scroll;
   }
 }

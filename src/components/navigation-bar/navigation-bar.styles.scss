@@ -1,29 +1,29 @@
+@import '../../styles-variables/variables';
+
 .navigation-bar {
+
+
+  color: $common-text-color;
+
   position: fixed;
-  border-radius: 5rem;
-  top: .5rem;
-  left: 2vw;
-  width: 96vw;
   height: 3rem;
+
+  top: 0;
 
   display: flex;
   justify-content: space-between;
 
+  width: 100vw;
 
   z-index: 10;
 
-  /* Glass effect */
-  background: linear-gradient(to right bottom, #cfcfcfdd, #cfcfcf99);
-  box-shadow: #00000020 0 .5rem 2rem 0;
+  background: linear-gradient(to top, #69161600, $base-color-pop);
+  transition: .3s;
 
-  @media screen and (min-width: 800px) {
-    width: 90vw;
-    height: 2rem;
-
-
-    left: 5vw;
-    top: 1rem;
+  &:hover {
+    background-color: $base-color-pop;
   }
+
 
   &__left,
   &__right {
@@ -44,7 +44,7 @@
     text-align: center;
 
     & > a {
-      color: black;
+      color: $common-text-color;
     }
   }
 
@@ -54,27 +54,14 @@
 
   &__right--sign-up{
     margin-right: 1rem;
-    border-radius: 5rem;
-    background-color: #113ae9;
-    color: #ffffff;
-    min-width: 5rem;
 
     & > a {
-      color: white;
+      color: $common-text-color;
     }
-  }
-
-  &__right--sign-in {
-    font-size: .5rem;
-    color: #303030;
-    & > a {
-      color: #303030;
-    }
-
   }
 
   &__right--sign-out {
-    margin-right: 1rem;
+    font-size: .5rem;
   }
 
 }

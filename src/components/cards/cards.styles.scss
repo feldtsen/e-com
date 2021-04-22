@@ -1,14 +1,24 @@
 .cards {
-  display: flex;
-  flex-direction: column;
-
-  justify-content: center;
-  align-content: center;
-
-  flex-wrap: wrap;
-
+  display: grid;
+  grid-template-columns: 100%;
 
   @media screen and (min-width: 600px) {
-    flex-direction: row;
+    grid-template-columns: 30% 70%;
+  }
+
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: 40% 60%;
+  }
+
+
+
+  &__right-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    @media screen and (min-width: 1200px) {
+      grid-template-columns: repeat(3, calc(100%/3));
+    }
+
   }
 }

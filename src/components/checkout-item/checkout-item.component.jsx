@@ -11,9 +11,9 @@ export const CheckoutItem = ({cartItem, clearItem, removeItem, addItem}) => {
             <img alt="checkout item" src={imageUrl} />
             <div>{name}</div>
             <div>
-                <span onClick={()=>removeItem(cartItem)}>&#10094;</span>
-                {quantity}
-                <span onClick={()=> addItem(cartItem)}>&#10095;</span>
+                <span className="checkout-item--arrow" onClick={()=>removeItem(cartItem)}>&#10094;</span>
+                <span className="checkout-item--quantity">{quantity}</span>
+                <span className="checkout-item--arrow" onClick={()=> addItem(cartItem)}>&#10095;</span>
             </div>
             <div>${price}</div>
             <div onClick={()=>clearItem(cartItem)}>&#10005;</div>

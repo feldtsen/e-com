@@ -21,18 +21,28 @@ const Cards = ({ items, nrToRenderDesktop, nrToRenderMobile }) => {
 
     return (
         <div className="cards">
-            {
-                items ?
-                    items
-                        .filter((item, index) => (
-                            index < rowCount
+            <div className="cards__left-container">
+                {
+                    items ?
+                        <Card item={items[0]} />
+                        :
+                        ''
+                }
+            </div>
+            <div className="cards__right-container">
+                {
+                    items ?
+                    items.filter((item, index) => (
+                            index < rowCount && index !== 0
                         ))
-                        .map((item) => (
-                            <Card key={item.id} item={item} rowCount={rowCount}/>
+                        .map((item, index) => (
+                                <Card key={item.id} item={item}/>
                         ))
                     :
                     ''
-            }
+                }
+            </div>
+
         </div>
     )
 }

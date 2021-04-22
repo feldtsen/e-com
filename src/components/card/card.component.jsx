@@ -3,14 +3,11 @@ import CustomButton from "../custom-button/custom-button.component";
 import {addItem} from "../../redux/cart/cart.action";
 import { connect } from "react-redux";
 
-const Card = ({rowCount, item, addItem}) => {
+const Card = ({item, addItem}) => {
     const {imageUrl, price, name} = item;
 
     return (
-        <div className="card"
-        style={{
-            flexBasis: `${(100 - (rowCount-1))/rowCount}%`
-        }}>
+        <div className="card" >
             <div className="card__image-container ">
                 <img alt='' src={imageUrl} className="card__image-container--image fade"/>
             </div>
