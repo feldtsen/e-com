@@ -90,7 +90,7 @@ const App = ({setCurrentUser, currentUser}) => {
             <img
                 alt="cover "
                 className={`cover--image ${location.pathname === "/" ? "cover--image--visible" : ''}`}
-                src="https://images.unsplash.com/photo-1505149538339-f92450a5783c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80"
+                src="https://images.unsplash.com/photo-1531375128131-e56e112aa47f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2090&q=80"
             />
         </div>
 
