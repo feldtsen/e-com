@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 import './App.scss';
 
 import { connect } from "react-redux";
@@ -88,7 +88,7 @@ const App = ({setCurrentUser, currentUser}) => {
     <>
         <div className="cover">
             <img
-                alt="cover image"
+                alt="cover "
                 className={`cover--image ${location.pathname === "/" ? "cover--image--visible" : ''}`}
                 src="https://images.unsplash.com/photo-1505149538339-f92450a5783c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80"
             />
