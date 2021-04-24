@@ -54,9 +54,11 @@
 
   &__right--sign-up{
     margin-right: 1rem;
+    background-color: $highlight-color-2;
+    border-radius: 4px;
 
     & > a {
-      color: $common-text-color;
+      color: $base-color;
     }
   }
 

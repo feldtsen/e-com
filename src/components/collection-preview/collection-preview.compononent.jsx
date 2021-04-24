@@ -5,7 +5,7 @@ import {selectCollectionsForPreview} from "../../redux/shop/shop.selector";
 import {Link} from "react-router-dom";
 
 const CollectionPreview = ({ collections, match }) => (
-    <div className="collection-preview">
+    <div className={`collection-preview ${match.path === "/shop" ? "collection-preview--visible" : ""}`}>
         {
             collections.map(({title, items, routeName, previewImage}) => (
                 <div key={title} className="collection-preview__item">
