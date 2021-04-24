@@ -3,19 +3,26 @@ import CustomButton from "../custom-button/custom-button.component";
 import {addItem} from "../../redux/cart/cart.action";
 import { connect } from "react-redux";
 
-const Card = ({item, addItem}) => {
+const Card = ({item, addItem, additionalImageClass, hoverable}) => {
     const {imageUrl, price, name} = item;
 
     return (
         <div className="card" >
             <div className="card__image-container ">
-                <img alt='' src={imageUrl} className="card__image-container--image fade"/>
+                <img alt='' src={imageUrl} className={`card__image-container--image fade ${additionalImageClass}`}/>
             </div>
-            <CustomButton onClick={()=>addItem(item)} additionalClasses="hide custom-button--card">add to cart</CustomButton>
-            <div className="card__description hide">
-                <p>{name}</p>
-                <p>{`${price}$`}</p>
-            </div>
+            {
+                hoverable &&
+                <>
+                    <CustomButton onClick={() => addItem(item)} additionalClasses="hide custom-button--card">add to
+                        cart
+                    </CustomButton>
+                    <div className="card__description hide">
+                    <p>{name}</p>
+                    <p>{`${price}$`}</p>
+                    </div>
+                </>
+            }
         </div>
     )
 }

@@ -13,7 +13,7 @@ const CollectionPage = ({collection}) =>  {
             <div className="collection__container">
                 {
                     items.map(item => (
-                        <Card key={item.id} item={item}/>
+                        <Card key={item.id} item={item} hoverable={true}/>
                     ))
                 }
             </div>

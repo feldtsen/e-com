@@ -1,13 +1,73 @@
+@import "../../styles-variables/variables";
+
 .collection-preview {
-  &--title {
-    color: white;
-    margin-bottom: .5rem;
-    font-size: 1.5rem;
+  display: grid;
+  grid-template-columns: auto;
+
+  @media screen and (min-width: 600px) {
+    grid-template-columns: auto auto;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-rows: 40vh;
+
+    overflow: hidden;
+    box-sizing: border-box;
+
+    @media screen and (min-width: 600px) {
+
+      grid-template-rows: 50vh;
+    }
+
+
+    &--link {
+      transition: .3s;
+      border: 3rem solid transparent;
+      z-index: 3;
+      position: absolute;
+      height: 40vh;
+      width: 100vw;
+      font-weight: bold;
+      color: $common-text-color;
+
+      @media screen and (min-width: 600px) {
+        width: 50vw;
+        height: 50vh;
+      }
+
+      &:hover {
+        background-color: $highlight-color-t-2;
+      }
+    }
 
     &--chevron {
       font-size: 1.1rem;
     }
-  }
 
+    &__image {
+      transition: .4s;
+      min-width: 100%;
+      min-height: 100%;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(.5);
+      opacity: .8;
+
+
+      @media screen and (min-width: 600px) {
+        transform: translate(-50%, -50%) scale(.8);
+      }
+
+      @media screen and (min-width: 2400px) {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    &:last-child {
+    }
+
+  }
 
 }
