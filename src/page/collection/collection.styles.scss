@@ -1,15 +1,19 @@
+@import "../../styles-variables/variables";
+
 .collection {
   margin: 1rem;
   &-title {
   }
 
   &__go-back {
-    padding: 1rem 0;
+    padding: 2rem 0;
+    color: $common-text-color
   }
   &__container {
     display: grid;
     grid-template-columns: auto;
     grid-column-gap: 1rem;
+    grid-template-rows: 60vh;
 
     @media screen and (min-width: 600px) {
       grid-template-columns: auto auto;
